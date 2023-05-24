@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Sale;
 use App\saleDatail;
+use App\Service;
 use MongoDB\BSON\UTCDateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -84,7 +85,8 @@ class HomeController extends Controller
             ]);
         });
 
+        $services = Service::get();
 
-        return view('home', compact('totalVentas', 'ventasdia') );
+        return view('home', compact('totalVentas', 'ventasdia', 'services'));
     }
 }

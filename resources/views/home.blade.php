@@ -7,6 +7,9 @@
         padding: 0;
         background: none;
     }
+    .custom-table {
+        overflow: auto;
+    }
 </style>
 @endsection
 @section('options')
@@ -20,36 +23,70 @@
             Panel administrador
         </h3>
     </div>
+    <div class="row">
+        <div class="col-md-6 grid-margin stretch-card">
+            <div class="card  text-white bg-info">
 
-    <div class="col-md-6 grid-margin stretch-card">
-        <div class="card  text-white bg-info">
+                <div class="card-body pb-0">
 
-            <div class="card-body pb-0">
-
-                <div class="float-right">
-                    <i class="fas fa-shopping-cart fa-4x"></i>
+                    <div class="float-right">
+                        <i class="fas fa-shopping-cart fa-4x"></i>
+                    </div>
+                    <div class="text-value h4"><strong>${{$totalVentas}} (Total Ventas)</strong>
+                    </div>
                 </div>
-                <div class="text-value h4"><strong>{{$totalVentas}} (Total Ventas)</strong>
+                <div class="chart-wrapper mt-3 mx-3" style="height:35px;">
+                    <a href="{{route('sales.index')}}" class="small-box-footer h4">Ventas <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <i class="fas fa-gift"></i>
+                        Ventas diarias
+                    </h4>
+                    <canvas id="ventas_diarias" height="100"></canvas>
+                    <div id="orders-chart-legend" class="orders-chart-legend"></div>
                 </div>
             </div>
-            <div class="chart-wrapper mt-3 mx-3" style="height:35px;">
-                <a href="{{route('sales.index')}}" class="small-box-footer h4">Ventas <i class="fa fa-arrow-circle-right"></i></a>
-            </div>
-
         </div>
     </div>
 
-
-
-    <div class="col-md-12 grid-margin stretch-card">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">
-                    <i class="fas fa-gift"></i>
-                    Ventas diarias
-                </h4>
-                <canvas id="ventas_diarias" height="100"></canvas>
-                <div id="orders-chart-legend" class="orders-chart-legend"></div>
+    <div class="row">
+        <div class="col-12 grid-margin">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <i class="fas fa-envelope"></i>
+                        Mis Servicios
+                    </h4>
+                    <div class="table-responsive">
+                        <table class="table custom-table">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Código</th>
+                                    <th>Costo</th>
+                                    <th>Fecha de creación</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($services as $service)
+                                <tr>
+                                    <td>{{$service->nom_servicio}}</td>
+                                    <td>{{$service->id}}</td>
+                                    <td>$ {{number_format($service->cost_servicio)}}</td>
+                                    <td>{{$service->created_at}}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
