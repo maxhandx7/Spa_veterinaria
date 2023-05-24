@@ -27,7 +27,7 @@ class UpdateRequest extends FormRequest
             'nom_cliente' => 'required|string|max:255',
             'apellido_cliente' => 'required|string|max:255',
             'dir_cliente' => 'required|string|max:255',
-            'tel_cliente' => 'required|string|max:255',
+            'tel_cliente' => 'required|integer|max:255',
             'email_cliente' => 'required|string|email|max:255|unique:clientes,email_cliente',
         ];
     }
@@ -48,7 +48,7 @@ class UpdateRequest extends FormRequest
             'dir_cliente.max' => 'La dirección del cliente debe tener máximo :max caracteres.',
 
             'tel_cliente.required' => 'El teléfono del cliente es requerido.',
-            'tel_cliente.string' => 'El teléfono del cliente debe ser una cadena de caracteres.',
+            'tel_cliente.integer' => 'El teléfono del cliente debe ser una cadena de caracteres.',
             'tel_cliente.max' => 'El teléfono del cliente debe tener máximo :max caracteres.',
 
             'email_cliente.required' => 'El correo electrónico del cliente es requerido.',

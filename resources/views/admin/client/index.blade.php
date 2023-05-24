@@ -32,13 +32,15 @@
                     <div class="d-flex justify-content-between">
                         <h4 class="card-title">Clientes</h4>
                         <div class="btn-group">
-                            <a class="dropdown-toggle cursor-pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="dropdown-toggle btn btn-success cursor-pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Nuevo
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <a href="{{route('clients.create')}}" class="dropdown-item" type="button">Agregar</a>
                             </div>
                         </div>
                     </div>
+                    <br>
                     <div class="table-responsive">
                         <table id="order-listing" class="table">
                             <thead>

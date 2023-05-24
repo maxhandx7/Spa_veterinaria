@@ -1,6 +1,6 @@
 <div class="form-group">
-    <label for="cliente_id">Clientes</label>
-    <select id="cliente_id" class="form-control" name="cliente_id">
+    <label for="cliente_id">Clientes</label><br>
+    <select id="cliente_id" class="form-control js-example-basic-single" name="cliente_id">
         <option selected disabled>Seleccione Cliente</option>
         @foreach ($clients as $client)
         <option value="{{ $client->id }}">{{$client->nom_cliente}}</option>
@@ -10,18 +10,19 @@
 
 
 <div class="form-group mascota_id" hidden>
-    <label for="mascota_id">Mascotas</label>
-    <select id="mascota_id" class="form-control" name="mascota_id">
+    <label>Mascotas</label>
+    <select id="mascota_id" class="form-control " name="mascota_id">
         <option selected disabled value="">Seleccione Mascota</option>
         @foreach ($pets as  $pet)
         <option value="{{ $pet->_id }}">{{$pet->nom_mascota}}</option>
         @endforeach
     </select>
+    
 </div>  
 
 <div class="form-group servicio_id" hidden>
     <label for="servicio_id">Servicios</label>
-    <select id="servicio_id" class="form-control" name="servicio_id">
+    <select id="servicio_id" class="form-control " name="servicio_id">
         <option selected disabled value="">Seleccione Servicio</option>
     </select>
 </div>

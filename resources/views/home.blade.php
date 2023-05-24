@@ -32,7 +32,7 @@
                     <div class="float-right">
                         <i class="fas fa-shopping-cart fa-4x"></i>
                     </div>
-                    <div class="text-value h4"><strong>${{$totalVentas}} (Total Ventas)</strong>
+                    <div class="text-value h4"><strong>${{number_format($totalVentas)}} (Total Ventas)</strong>
                     </div>
                 </div>
                 <div class="chart-wrapper mt-3 mx-3" style="height:35px;">

@@ -32,13 +32,15 @@
                     <div class="d-flex justify-content-between">
                         <h4 class="card-title">Servicios</h4>
                         <div class="btn-group">
-                            <a class="dropdown-toggle cursor-pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-toggle btn btn-success cursor-pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Nuevo    
+                        </a>
+                            <div class="dropdown-menu  dropdown-menu-right">
                                 <a href="{{route('services.create')}}" class="dropdown-item" type="button">Agregar</a>
                             </div>
                         </div>
                     </div>
+                    <br>
                     <div class="table-responsive">
                         <table id="order-listing" class="table">
                             <thead>
@@ -68,7 +70,6 @@
                                     <td>{{number_format($service->cost_servicio) }}</td>
 
                                     <td>{{$service->dur_servicio }} horas</td>
-
                                     <td>
                                     {!! Form::open(['route'=>['services.destroy', $service], 'method'=>'DELETE']) !!}
                                     <a class="btn btn-outline-info" href="{{ route('services.edit', $service)}}" title="Editar">

@@ -20,13 +20,13 @@
   <link rel="icon" type="image/png" href="{{ asset('melody/images/favicon.png') }}">
 </head>
 
-<body>
+<body class="sidebar-icon-only">
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row default-layout-navbar">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
         <a class="navbar-brand brand-logo" href=""><img src="{{asset('melody/images/logo.svg')}}" alt="logo" /></a>
-        <a class="navbar-brand brand-logo-mini" href="index-2.html"><img src="{{asset('melody/images/logo-mini.svg')}}" alt="logo" /></a>
+        <a class="navbar-brand brand-logo-mini" href="/home"><img src="{{asset('melody/images/logo-mini.svg')}}" alt="logo" /></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-stretch">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -207,6 +207,7 @@
   {!! Html::script('melody/js/off-canvas.js') !!}
   {!! Html::script('melody/js/hoverable-collapse.js') !!}
   {!! Html::script('melody/js/misc.js') !!}
+  {!! Html::script('melody/js/select2.js') !!}
   {!! Html::script('melody/js/settings.js') !!}
   {!! Html::script('melody/js/todolist.js') !!}
 

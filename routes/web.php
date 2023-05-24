@@ -14,21 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
+
+Route::get('/', function() {
+    return redirect()->route('login');
 });
-
-Route::get('sales/reports_day', 'ReportController@reports_day')->name('reports.day');
-Route::get('sales/reports_date', 'ReportController@reports_date')->name('reports.date');
-
-Route::post('sales/report_results', 'ReportController@report_results')->name('report.results');
-
-Route::resource('business', 'BusinessController')->names('business')->only([
-    'index', 'update'
-]);
-Route::resource('printers', 'PrinterController')->names('printers')->only([
-    'index', 'update'
-]);
 
 Route::resource('users', 'UserController')->names('users');
 
