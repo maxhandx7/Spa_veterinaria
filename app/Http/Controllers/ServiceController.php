@@ -41,7 +41,8 @@ class serviceController extends Controller
     
     public function show(Service $service)
     {
-        return view('admin.service.show', compact('services'));
+        $pets = Pet::get();
+        return view('admin.service.show', compact('service', 'pets'));
     }
 
     

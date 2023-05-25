@@ -29,6 +29,9 @@
     <input type="number" name="dur_servicio" id="dur_servicio" class="form-control" placeholder="Duración del servicio" required>
 </div>
 
+<input type="text" name="estado" id="estado" class="form-control" hidden value="disable">
+
+
 <div class="form-group">
     <label for="mascota_id">Mascota</label>
     <select id="mascota_id" class="form-control selectize" name="mascota_id">

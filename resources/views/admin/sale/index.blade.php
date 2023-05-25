@@ -34,7 +34,7 @@
                         <h4 class="card-title">Ventas</h4>
                         <div class="btn-group">
                             <a class="dropdown-toggle btn btn-success cursor-pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Nuevo
+                                Nuevo
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <a href="{{ route('sales.create')}}" class="dropdown-item" type="button">Agregar</a>

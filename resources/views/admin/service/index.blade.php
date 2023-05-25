@@ -33,8 +33,8 @@
                         <h4 class="card-title">Servicios</h4>
                         <div class="btn-group">
                             <a class="dropdown-toggle btn btn-success cursor-pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Nuevo    
-                        </a>
+                                Nuevo
+                            </a>
                             <div class="dropdown-menu  dropdown-menu-right">
                                 <a href="{{route('services.create')}}" class="dropdown-item" type="button">Agregar</a>
                             </div>
@@ -48,10 +48,8 @@
 
                                     <th>#</th>
                                     <th>Nombre</th>
-                                    <th>Descripcion</th>
                                     <th>Categoria</th>
-                                    <th>Costo</th>
-                                    <th>Duracion</th>
+                                    <th>Estado</th>
                                     <th style="width: 100px;">Acciones</th>
                                 </tr>
                             </thead>
@@ -61,24 +59,27 @@
                                 <tr>
                                     <th scope="row">{{$num++ }}</th>
 
-                                    <td> <a href="{{ route('pets.show', $service->mascota_id)  }}"> {{$service->nom_servicio }} </a></td>
-
-                                    <td>{{$service->desc_servicio }}</td>
+                                    <td> <a href="{{ route('services.show', $service)  }}"> {{$service->nom_servicio }} </a></td>
 
                                     <td>{{$service->categories->name }}</td>
-
-                                    <td>{{number_format($service->cost_servicio) }}</td>
-
-                                    <td>{{$service->dur_servicio }} horas</td>
+                                    @if($service->estado == 'enable')
                                     <td>
-                                    {!! Form::open(['route'=>['services.destroy', $service], 'method'=>'DELETE']) !!}
-                                    <a class="btn btn-outline-info" href="{{ route('services.edit', $service)}}" title="Editar">
-                                            <i class="far fa-edit"></i>
+                                        <p class="text-success">Pagado</p>
+                                    </td>
+                                    @else
+                                    <td>
+                                        <p class="text-danger">No pago</p>
+                                    </td>
+                                    @endif
+                                    <td>
+                                        {!! Form::open(['route'=>['services.destroy', $service], 'method'=>'DELETE']) !!}
+                                        <a class="btn btn-outline-info" href="{{ route('services.edit', $service)}}" title="Editar">
+                                            <i class="fa fa-edit"></i>
                                         </a>
-                                        <button class="btn btn-outline-danger delete-confirm" type="submit"  title="Eliminar">
-                                            <i class="far fa-trash-alt"></i>
-                                    </button>
-                                    {!! Form::close() !!}
+                                        <button class="btn btn-outline-danger delete-confirm" type="submit" title="Eliminar">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                        {!! Form::close() !!}
                                     </td>
                                 </tr>
                                 @endforeach

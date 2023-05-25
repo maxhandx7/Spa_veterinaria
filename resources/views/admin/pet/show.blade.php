@@ -70,7 +70,7 @@
                                         Edad
                                     </strong>
                                     <span class="float-right text-muted">
-                                        {{$edad }}
+                                        {{$edad }} años
                                     </span>
                                 </p>
 

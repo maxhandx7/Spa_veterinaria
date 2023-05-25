@@ -38,8 +38,8 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="description">Descripcion</label>
-                        <textarea id="description" class="form-control" value="" name="description" rows="3">{{$category->description}}</textarea>
+                        <label for="descripcion">Descripcion</label>
+                        <textarea id="descripcion" class="form-control"  name="descripcion" rows="3">{{$category->descripcion}}</textarea>
                     </div>
 
 

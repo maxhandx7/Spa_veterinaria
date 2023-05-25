@@ -90,7 +90,7 @@
         var selectedPetId = $(this).val();
         servicioSelect.children('option:not(:first)').remove();
         @foreach($services as $key => $service)
-        if (selectedPetId === '{{$service->mascota_id}}') {
+        if (selectedPetId === '{{$service->mascota_id}}' && '{{$service->estado}}' == 'disable') {
             var option = $('<option></option>').val('{{ $service->_id }}_{{ $service->cost_servicio }}').text('{{$service->nom_servicio}}');
             servicioSelect.append(option);
         }

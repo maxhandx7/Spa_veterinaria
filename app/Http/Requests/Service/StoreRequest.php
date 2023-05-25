@@ -42,6 +42,7 @@ class StoreRequest extends FormRequest
                     $query->where('_id', $this->input('category_id'));
                 }),
             ],
+            'estado' => 'nullable|string',
         ];
     }
 
@@ -62,6 +63,7 @@ class StoreRequest extends FormRequest
             'mascota_id.exists' => 'El ID de la mascota proporcionada no existe.',
             'category_id.required' => 'El ID de la categoria es requerido.',
             'category_id.exists' => 'El ID de la categoria proporcionada no existe.',
+            'estado.string' => 'debe ser una cadena de texto', 
         ];
     }
 }

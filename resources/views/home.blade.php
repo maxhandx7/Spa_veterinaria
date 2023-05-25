@@ -70,17 +70,17 @@
                                 <tr>
                                     <th>Nombre</th>
                                     <th>Código</th>
+                                    <th>Mascota</th>
                                     <th>Costo</th>
-                                    <th>Fecha de creación</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($services as $service)
                                 <tr>
-                                    <td>{{$service->nom_servicio}}</td>
+                                    <td><a href="{{ route('services.show', $service)  }}">{{$service->nom_servicio}}</a></td>
                                     <td>{{$service->id}}</td>
+                                    <td><a href="{{ route('pets.show', $service->pets->id)  }}">{{$service->pets->nom_mascota}}</a></td>
                                     <td>$ {{number_format($service->cost_servicio)}}</td>
-                                    <td>{{$service->created_at}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>

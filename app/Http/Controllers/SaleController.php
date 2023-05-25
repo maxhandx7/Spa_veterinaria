@@ -45,8 +45,10 @@ class SaleController extends Controller
         ]);
         foreach ($request->servicio_id as $key => $servicio) {
             $results[] = array("servicio_id" => $request->servicio_id[$key], "precio" => $request->precio[$key]);
+            $this->updateDefaultValue($request->servicio_id[$key]);
         }
         $sale->saleDetails()->createMany($results);
+        
         return redirect()->route('sales.index');
     }
 
@@ -84,12 +86,20 @@ class SaleController extends Controller
 
     public function pdf(sale $sale)
     {
-        $subtotal = 0 ;
+        $subtotal = 0;
         $saleDetails = $sale->saleDetails;
         foreach ($saleDetails as $saleDetail) {
             $subtotal += $saleDetail->precio;
         }
-        $pdf = PDF::loadView('admin.sale.pdf', compact('sale','subtotal','saleDetails'));
-        return $pdf->download('reporte_de_venta_'.$sale->id.'.pdf');
+        $pdf = PDF::loadView('admin.sale.pdf', compact('sale', 'subtotal', 'saleDetails'));
+        return $pdf->download('reporte_de_venta_' . $sale->id . '.pdf');
+    }
+
+    public function updateDefaultValue($id)
+    {
+        $coleccion = service::find($id);
+        $coleccion->estado = 'enable';
+        $coleccion->save();
+
     }
 }

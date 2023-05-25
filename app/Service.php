@@ -8,6 +8,7 @@ class Service extends Model
 {
     protected $connection = 'mongodb';
     protected $collection = 'services_collection';
+    
 
     protected $fillable = [
         'nom_servicio',
@@ -16,6 +17,7 @@ class Service extends Model
         'dur_servicio',
         'category_id',
         'mascota_id',
+        'estado',
     ];
 
     public function categories(){

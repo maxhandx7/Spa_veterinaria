@@ -49,7 +49,6 @@
                         <label for="tel_cliente">Telefono</label>
                         <input type="num" name="tel_cliente" id="tel_cliente" class="form-control" placeholder="Telefono de cliente" value="{{$client->tel_cliente}}" required>
                     </div>
-
                     <div class="form-group">
                         <label for="email_cliente">Email</label>
                         <input type="email" name="email_cliente" id="email_cliente" class="form-control" placeholder="Email de cliente" value="{{$client->email_cliente}}" required>
