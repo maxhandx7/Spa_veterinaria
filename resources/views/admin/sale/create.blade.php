@@ -117,7 +117,7 @@
                     cont + ');"><i class="fa fa-times fa-2x"></i></button></td> <td><input type="hidden" name="servicio_id[]" value="' +
                     servicio_id + '">' + servicio + '</td> <td> <input type="hidden" name="precio[]" value="' +
                     precio + '"> <input class="form-control" type="number" value="' +
-                    precio + '" disabled> </td>  <td align="right">s/' +
+                    precio + '" disabled> </td>  <td align="right">$' +
                     subtotal[cont] + '</td></tr>';
                 cont++;
                 limpiar();

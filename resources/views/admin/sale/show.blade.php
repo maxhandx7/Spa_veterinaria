@@ -63,7 +63,7 @@
                                             <p align="right">SUBTOTAL:</p>
                                         </th>
                                         <th>
-                                            <p align="right">s/{{number_format($subtotal,2)}}</p>
+                                            <p align="right"{{number_format($subtotal,2)}}</p>
                                         </th>
                                     </tr>
 
@@ -72,7 +72,7 @@
                                             <p align="right">TOTAL IMPUESTO ({{$sale->iva}}%):</p>
                                         </th>
                                         <th>
-                                            <p align="right">s/{{number_format($subtotal*$sale->iva/100,2)}}</p>
+                                            <p align="right">${{number_format($subtotal*$sale->iva/100,2)}}</p>
                                         </th>
                                     </tr>
                                     <tr>
@@ -80,7 +80,7 @@
                                             <p align="right">TOTAL:</p>
                                         </th>
                                         <th>
-                                            <p align="right">s/{{number_format($sale->total,2)}}</p>
+                                            <p align="right">${{number_format($sale->total,2)}}</p>
                                         </th>
                                     </tr>
 
@@ -89,8 +89,8 @@
                                     @foreach($saleDetails as $saleDetail)
                                     <tr>
                                         <td>{{$saleDetail->service->nom_servicio}}</td>
-                                        <td>s/ {{number_format($saleDetail->precio)}}</td>
-                                        <td>s/{{number_format($saleDetail->precio)}}
+                                        <td>$ {{number_format($saleDetail->precio)}}</td>
+                                        <td>${{number_format($saleDetail->precio)}}
                                         </td>
                                     </tr>
                                     @endforeach
@@ -108,6 +108,6 @@
 </div>
 @endsection
 @section('scripts')
-{!! Html::script('melody/js/profile-demo.js') !!}
+{!! Html::script('melody/j$s/profile-demo.js') !!}
 {!! Html::script('melody/js/data-table.js') !!}
 @endsection

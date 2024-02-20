@@ -145,8 +145,8 @@
                     @foreach ($saleDetails as $saleDetail)
                     <tr>
                         <td>{{$saleDetail->service->nom_servicio}}</td>
-                        <td>s/ {{number_format($saleDetail->precio)}}</td>
-                        <td>s/ {{number_format($saleDetail->precio)}}
+                        <td>$ {{number_format($saleDetail->precio)}}</td>
+                        <td>$ {{number_format($saleDetail->precio)}}
                         </td>
                     </tr>
                     @endforeach
@@ -158,7 +158,7 @@
                             <p align="right">SUBTOTAL:</p>
                         </th>
                         <td>
-                            <p align="right">s/ {{number_format($subtotal,2)}}</p>
+                            <p align="right">$ {{number_format($subtotal,2)}}</p>
                         </td>
                     </tr>
                    
@@ -167,7 +167,7 @@
                             <p align="right">TOTAL IMPUESTO ({{$sale->iva}}%):</p>
                         </th>
                         <td>
-                            <p align="right">s/ {{number_format($subtotal*$sale->iva/100,2)}}</p>
+                            <p align="right">$ {{number_format($subtotal*$sale->iva/100,2)}}</p>
                         </td>
                     </tr>
 
@@ -176,7 +176,7 @@
                             <p align="right">TOTAL PAGAR:</p>
                         </th>
                         <td>
-                            <p align="right">s/ {{number_format($sale->total,2)}}</p>
+                            <p align="right">$ {{number_format($sale->total,2)}}</p>
                         </td>
                     </tr>
 
